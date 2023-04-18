@@ -9,7 +9,7 @@ namespace ChallengesWithTestsMark8
 
         public bool CollectionContainsWord(IEnumerable<string> words, string word, bool ignoreCase)
         {
-            bool containsWord;
+            bool containsWord = false;
 
             if (string.Equals(words, null) || words.Contains(null))
             {
@@ -24,13 +24,14 @@ namespace ChallengesWithTestsMark8
 
                 containsWord = lc.Contains(word);
             }
-
-            if (ignoreCase == false)
+            else if (ignoreCase == false)
             {
                 containsWord = words.Contains(word);
             }
-            return true;
+            return containsWord;
         }
+
+         
 
         public bool IsPrimeNumber(int num)
         {
